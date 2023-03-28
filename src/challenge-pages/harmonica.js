@@ -26,7 +26,15 @@ function sketch(p5) {
         p5.text(i, i * 60 + 105 + 20, 125 + 27);
     }
 
-  }
+    // Display Note Changes
+    for (var i = 48; i <= 57; i++)
+      if (p5.keyIsDown(i)) {
+          p5.fill("lightgreen");
+          p5.rect((i - 48) * 60 + 105, 125, 50, 50, 10);
+          p5.fill("black");
+          p5.text((i - 48), (i - 48) * 60 + 105 + 20, 125 + 27);
+      }
+    }
 }
 
 export default function App() {
