@@ -21,11 +21,11 @@ class Controller extends React.Component {
 
   loadPage(i) {
     let pageType = pageData[i].pageType;
-    if (pageType == 'narrative') {
+    if (pageType === 'narrative') {
       return this.loadNarrativePage(i);
-    } else if (pageType == 'challenge') {
+    } else if (pageType === 'challenge') {
       return this.loadChallengePage(i);
-    } else if (pageType == 'title') {
+    } else if (pageType === 'title') {
       return (
         <Title loadPage={(i) => this.nextPage(i) } nextPageIndex={(this.state.activeIndex + 1)}/>
       );
