@@ -15,13 +15,12 @@ class Title extends React.Component {
   
   buttonClicked() {
     this.setState({in: false});
-    console.log("next page index is", this.props.nextPageIndex);
     this.props.loadPage(this.props.nextPageIndex);
   }
 
   render() {
     return (
-      <div class="title-div">
+      <div className="title-div">
         <Slide in={this.state.in} timeout={500} mountOnEnter unmountOnExit>
           <div>
             <h1>Welcome to --Insert Title of narrative here--</h1>

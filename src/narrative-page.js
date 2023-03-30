@@ -1,5 +1,6 @@
 import React from 'react';
 import Button from '@mui/material/Button';
+import { unmountComponentAtNode } from 'react-dom';
 
 
 class NarrativePage extends React.Component {
@@ -9,7 +10,7 @@ class NarrativePage extends React.Component {
         for (let i = 0; i < docLinks.length; i++) {
             const linkElement = docLinks[i];
             linkElement.addEventListener('click', () => {
-                this.props.loadPage(this.props.links[i].nextPageIndex);
+                this.props.loadPage(this.props.links[i].linkIndex);
             });
         }
     }
