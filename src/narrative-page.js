@@ -15,6 +15,10 @@ class NarrativePage extends React.Component {
     }
 
     render() {
+        // let imgPath = "";
+        // if (this.props.imgName) {
+        //     imgPath = './assets/' + this.props.imgName;
+        // }
         return (
             <div>
                 <div className='narrative-paragraph'>

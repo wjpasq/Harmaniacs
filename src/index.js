@@ -37,6 +37,7 @@ class Controller extends React.Component {
     const story = pageData[i].story;
     const links = pageData[i].links;
     const nextPageIndex = pageData[i].nextPageIndex;
+    const imgName = pageData[i].imgName;
 
     return (
       <NarrativePage 
@@ -45,6 +46,7 @@ class Controller extends React.Component {
         story={story} 
         loadPage={(i) => this.nextPage(i)}
         links={links} 
+        imgName={imgName}
         nextPageIndex={nextPageIndex}/>
     );
   }
