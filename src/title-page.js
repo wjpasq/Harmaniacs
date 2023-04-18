@@ -13,6 +13,8 @@ class Title extends React.Component {
   }
   
   buttonClicked() {
+    let audio = new Audio("./assets/bow-bow.mp3");
+    audio.play();
     this.setState({in: false});
     this.props.loadPage(this.props.nextPageIndex);
   }
