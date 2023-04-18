@@ -15,15 +15,23 @@ class NarrativePage extends React.Component {
     }
 
     render() {
+        let button;
+        if (this.props.nextPageIndex) {
+            button = <Button id='next-page-button' variant="contained" onClick={() => this.props.loadPage(this.props.nextPageIndex) }>Next Page</Button>
+        }
+
+        let title;
+        if (this.props.title) {
+            title = <h1>{ this.props.title }</h1>
+        }
+
         return (
             <div>
                 <div className='narrative-paragraph'>
-                    <h1>{ this.props.title }</h1>
+                    { title }
                     <p dangerouslySetInnerHTML={{ __html: this.props.story }}></p>
                 </div>
-                <Button id='next-page-button' variant="contained" onClick={() => this.props.loadPage(this.props.nextPageIndex) }>
-                    Next Page
-                </Button>
+                { button }
             </div>
         );
     }

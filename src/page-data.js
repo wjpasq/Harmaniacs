@@ -29,7 +29,9 @@ const pageData = [
     {
       pageType: 'narrative',
       story: `Testing 1 2 3 <a class='link' >Page 3</a> Testing some more adjk adkfj adklfj adkf
-        afdkljadlkfjadklfja a dfjalkfj ad fkaj dflkajdflakd jflkads jfkald jflkadj flkadj flkadsj flakdsj flakdsjfaldksfj.`,
+        afdkljadlkfjadklfja a dfjalkfj ad fkaj dflkajdflakd jflkads jfkald jflkadj flkadj flkadsj flakdsj flakdsjfaldksfj.
+        <img class="narrative-image" src="./assets/cartoon-store.png" alt="cartoon-store" >`,
+      // imgName: 'cartoon-store.png',
       title: 'Page 1',
       links: [
         {
