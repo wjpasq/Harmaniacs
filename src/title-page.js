@@ -22,7 +22,7 @@ class Title extends React.Component {
       <div className="title-div">
         <Slide in={this.state.in} timeout={500} mountOnEnter unmountOnExit>
           <div>
-            <h1>Welcome to --Insert Title of narrative here--</h1>
+            <h1>Stan's Stand: The Fight Against an Evil Customer</h1>
             <h3>By the Harmaniacs</h3>
           </div>
         </Slide>
