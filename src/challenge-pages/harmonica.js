@@ -46,7 +46,7 @@ function sketch(p5) {
 
     // Display Note Changes
     // 48 = "0" key -> 57 = "9" key, therefore checks all number keys
-    for (var i = 48; i <= 57; i++)
+    for (i = 48; i <= 57; i++) {
       if (p5.keyIsDown(i)) {
           p5.fill("lightgreen");
           p5.rect((i - 48) * 60 + 105, 125, 50, 50, 10);
@@ -60,6 +60,7 @@ function sketch(p5) {
         sounds[i - 48].currentTime = 0
       }
     }
+   }
 }
 
 export default function App() {
