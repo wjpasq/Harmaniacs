@@ -89,7 +89,7 @@ class Controller extends React.Component {
           say no.
           <br>
           <br>
-          “Here you go,” Stan said, carefully removing a [Steven what are good guitars] from its spot on the wall and handing it to Main 
+          “Here you go,” Stan said, carefully removing an early 1960 stratocaster from its spot on the wall and handing it to Main 
           Character, who grabbed it roughly. <a class='link'>“Do you know how to play?”</a>
           <br>
           <br>
@@ -264,8 +264,7 @@ class Controller extends React.Component {
         Stan decided to celebrate. 
         <br>
         <br>
-        [insert free-form harmonica]
-        [Main Character respawns]
+        Main character suddenly came back to life.
         <br>
         <br>
         “That wasn't very nice,” Main Character said. “I don't fight people who don't play by the rules.” 
@@ -295,10 +294,8 @@ class Controller extends React.Component {
         story: `“Then fight me like a man!” Stan yelled. “What kind of coward runs from a challenge?”
         <br>
         <br>
-        Main Character stopped. “Good point,” he said. 
-        <br>
-        <br>
-        [insert non-harmonica challenge. Stan wins]
+        Main Character stopped. “Good point,” he said. But before he could get the words out, Stan jumped and kicked in 
+        the face like a ninja. Main Character immediatly yielded to Stan.
         <br>
         <br>
         “Fair fight, I guess,” Main Character said, grudgingly handing Stan the Man the harmonica. “You better watch 
