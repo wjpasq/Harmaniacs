@@ -138,7 +138,7 @@ class Controller extends React.Component {
       {
         /////////// Index 3 //////////
         pageType: 'challenge',
-        html: <PlayHarmonica loadPage={(i) => this.nextPage(i) } nextPageIndex={1} />,
+        html: <Harmonica loadPage={(i) => this.nextPage(i) } nextPageIndex={1} />,
       },
       {
         /////////// Index 4 //////////
