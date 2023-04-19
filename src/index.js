@@ -491,4 +491,3 @@ class Controller extends React.Component {
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<Controller />);
-root.render(<Harmonica />);
