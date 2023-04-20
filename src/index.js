@@ -2,8 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import Title from './title-page.js';
 import NarrativePage from './narrative-page.js';
-import HelpNPCs from './challenge-pages/HelpNPCs.js';
-import Harmonica from './challenge-pages/harmonica.js';
+import HarmonicaPage from './challenge-pages/harmonica-wrapper.js';
 
 class Controller extends React.Component {
   constructor(props) {
@@ -44,8 +43,8 @@ class Controller extends React.Component {
           <br>
           <img class="narrative-image" src="./assets/cartoon-store.png" alt="cartoon-store" >
           <br>
-          Stan the Man is a flat character to everyone around him. <a class='link'>His customers barely remember their actions with the quiet, 
-          well-mannered man behind the counter</a>, and even his family sometimes forgets that Stan the Man has opinions and his own
+          Stan the Man is a flat character to everyone around him. His customers barely remember their actions with the quiet, 
+          well-mannered man behind the counter, and even his family sometimes forgets that Stan the Man has opinions and his own
           personality traits. However, to himself, Stan is so much more than just a flat character. His life has two passions: 
           his music store, and his sick harmonica skills. 
           <br><br>
@@ -54,26 +53,18 @@ class Controller extends React.Component {
           Stan also spends hours a day <a class='link'>practicing his harmonica</a>, serenading the ruins of a once-prosperous land.`,
         links: [
           {
-            linkIndex: 2
-          },
-          {
-            linkIndex: 3,
+            linkIndex: 2,
           }
         ],
-        nextPageIndex: 4
+        nextPageIndex: 3
       },
       {
         /////////// Index 2 //////////
         pageType: 'challenge',
-        html: <HelpNPCs loadPage={(i) => this.nextPage(i) } nextPageIndex={1} />,
+        html: <HarmonicaPage loadPage={(i) => this.nextPage(i) } nextPageIndex={1} />,
       },
       {
         /////////// Index 3 //////////
-        pageType: 'challenge',
-        html: <Harmonica loadPage={(i) => this.nextPage(i) } nextPageIndex={1} />,
-      },
-      {
-        /////////// Index 4 //////////
         pageType: 'narrative',
         title: 'Chaos',
         story: `One day, Stan was lovingly polishing his vintage guitar collection with the softest cloth in his possession when he heard 
@@ -89,7 +80,7 @@ class Controller extends React.Component {
           say no.
           <br>
           <br>
-          “Here you go,” Stan said, carefully removing a [Steven what are good guitars] from its spot on the wall and handing it to Main 
+          “Here you go,” Stan said, carefully removing a 1960s stratocaster guitar from its spot on the wall and handing it to Main 
           Character, who grabbed it roughly. <a class='link'>“Do you know how to play?”</a>
           <br>
           <br>
@@ -101,22 +92,19 @@ class Controller extends React.Component {
           <br>
           <br>
           Main Character spun on his heel, unholstering his gun and taking deadly aim. A series of gunshots rang out as vintage 
-          guitar after vintage guitar exploded, showering the store in <a class='link'>priceless fragments</a>. <a class='link'>
-          Within a few moments, every large instrument was destroyed.</a>`,
+          guitar after vintage guitar exploded, showering the store in <a class='link'>priceless fragments</a>.
+          Within a few moments, every large instrument was destroyed.`,
           links: [
             {
+              linkIndex: 4
+            },
+            {
               linkIndex: 5
-            },
-            {
-              linkIndex: 6
-            },
-            {
-              linkIndex: 7
             }
           ],
       },
       {
-        /////////// Index 5 //////////
+        /////////// Index 4 //////////
         pageType: "narrative",
         title: "Thief",
         story: `“Doesn't matter,” Main Character said. He unholstered his gun and fired. A priceless guitar splintered into smithereens. 
@@ -144,12 +132,12 @@ class Controller extends React.Component {
         Main Character considered the harmonica for a second. Moving fast as lightning, he snatched it out of Stan's 
         hand and sprinted away before Stan could react.
         `,
-        nextPageIndex: 8
+        nextPageIndex: 7
       },
       {
-        /////////// Index 6 //////////
+        /////////// Index 5 //////////
         pageType: "narrative",
-        title: "Death by Harmonica",
+        title: "Duel!",
         story: `Stan wept in disbelief. “You can't do that!”
         <br>
         <br>
@@ -166,51 +154,34 @@ class Controller extends React.Component {
         <br>
         Stan realized he did not know how to fight. “Harmonica,” he said, producing his prized possession, a pure gold vintage 
         Harmaniac 3000, from his pocket. 
-        <br>
-        <br>
-        HARMONICA DUEL --> STAN DIES
-        <br>
-        <br>
-        Stars swam in Stan's eyes as Main Character stalked out of the rubble of the shop with a guitar in one hand and a 
-        harmonica in the other. Before he knew it, the world was dark.
-        `,
-        nextPageIndex: 1
-      },
-      {
-        /////////// Index 7 //////////
-        pageType: 'narrative',
-        title: 'Victory at Last',
-        story: `Stan wept in disbelief. “You can't do that!”
-        <br>
-        <br>
-        “I just did,” Main Character said, swinging the remaining guitar over his shoulder carelessly. “Thanks for the guitar.” 
-        <br>
-        <br>
-        “I- I challenge you to a duel!” Stan the Man said. He couldn't believe what had just escaped his mouth; it was Main 
-        Character's job to fight bad guys and start duels, not his. But he could not sit down and accept the destruction of 
-        his life's work without a fight. 
-        <br>
-        <br>
-        “Okay,” Main Character said. “Guns or fists?”
-        <br>
-        <br>
-        Stan realized he did not know how to fight. “Harmonica,” he said, producing his prized possession, a pure gold vintage 
-        Harmaniac 3000, from his pocket. 
-        <br>
-        <br>
-        HARMONICA DUEL --> STAN WINS
-        <br>
-        <br>
-        The Main Character let out a shriek of defeat, gently placed the guitar and harmonica on the counter, and left the shop, 
-        hanging his head in shame. Stan was in shock. Was this what it felt like to be a Main Character? 
-        <br>
-        <br>
-        Suddenly, everything began to lag slightly, and Stan heard a strange singing from above. The door began to glow. 
         `,
         nextPageIndex: 13
       },
       {
-        /////////// Index 8 //////////
+        /////////// Index 6 //////////
+        pageType: 'narrative',
+        title: 'Duel!',
+        story: `Stan wept in disbelief. “You can't do that!”
+        <br>
+        <br>
+        “I just did,” Main Character said, swinging the remaining guitar over his shoulder carelessly. “Thanks for the guitar.” 
+        <br>
+        <br>
+        “I- I challenge you to a duel!” Stan the Man said. He couldn't believe what had just escaped his mouth; it was Main 
+        Character's job to fight bad guys and start duels, not his. But he could not sit down and accept the destruction of 
+        his life's work without a fight. 
+        <br>
+        <br>
+        “Okay,” Main Character said. “Guns or fists?”
+        <br>
+        <br>
+        Stan realized he did not know how to fight. “Harmonica,” he said, producing his prized possession, a pure gold vintage 
+        Harmaniac 3000, from his pocket. 
+        `,
+        nextPageIndex: 14
+      },
+      {
+        /////////// Index 7 //////////
         pageType: 'narrative',
         title: 'Get Him!',
         story: `Stan sprinted after Main Character as fast as his legs could carry him. Main Character was in better shape, 
@@ -221,19 +192,19 @@ class Controller extends React.Component {
         Main Character looked over his shoulder and locked eyes with Stan. “<a class='link'>You'll never catch me!</a>” `,
         links: [
           {
+            linkIndex: 8
+          },
+          {
             linkIndex: 9
           },
           {
             linkIndex: 10
-          },
-          {
-            linkIndex: 11
           }
         ],
-        nextPageIndex: 12
+        nextPageIndex: 11
       },
       {
-        /////////// Index 9 //////////
+        /////////// Index 8 //////////
         pageType: 'narrative',
         title: 'Gunslinger',
         story: `“Fight me like a man!” Stan yelled. “What kind of coward runs from a challenge?”
@@ -264,8 +235,7 @@ class Controller extends React.Component {
         Stan decided to celebrate. 
         <br>
         <br>
-        [insert free-form harmonica]
-        [Main Character respawns]
+        Suddenly Main Character came back to life.
         <br>
         <br>
         “That wasn't very nice,” Main Character said. “I don't fight people who don't play by the rules.” 
@@ -273,10 +243,10 @@ class Controller extends React.Component {
         <br>
         Main Character turned around and ran. Stan started chasing him again.
         `,
-        nextPageIndex: 8
+        nextPageIndex: 7
       },
       {
-        /////////// Index 10 //////////
+        /////////// Index 9 //////////
         pageType: 'narrative',
         title: 'Oops',
         story: `Main Character grinned evilly and threw the guitar at Stan. Stan the Man tried to dodge and catch 
@@ -289,7 +259,7 @@ class Controller extends React.Component {
         nextPageIndex: 1,
       },
       {
-        /////////// Index 11 //////////
+        /////////// Index 10 //////////
         pageType: 'narrative',
         title: 'Fight',
         story: `“Then fight me like a man!” Stan yelled. “What kind of coward runs from a challenge?”
@@ -298,7 +268,8 @@ class Controller extends React.Component {
         Main Character stopped. “Good point,” he said. 
         <br>
         <br>
-        [insert non-harmonica challenge. Stan wins]
+        Stan immediatly jump-kicked Main Character in the face like a ninja. Main Character then yielded to Stan and the
+        fight was over just as quickly as it began.
         <br>
         <br>
         “Fair fight, I guess,” Main Character said, grudgingly handing Stan the Man the harmonica. “You better watch 
@@ -317,10 +288,10 @@ class Controller extends React.Component {
         <br>
         “Let's hope Main Character never bothers me again,” he said.
         `,
-        nextPageIndex: 4,
+        nextPageIndex: 3,
       },
       {
-        /////////// Index 12 //////////
+        /////////// Index 11 //////////
         pageType: 'narrative',
         title: 'The Escape',
         story: ` Stan ran as fast as he could, but Main Character's figure was growing smaller and smaller as he drew 
@@ -337,7 +308,7 @@ class Controller extends React.Component {
         nextPageIndex: 1
       },
       {
-        /////////// Index 13 //////////
+        /////////// Index 12 //////////
         pageType: 'narrative',
         title: 'The End',
         story: `The door swung open again, revealing a figure in jeans and a T-shirt who could have been straight 
@@ -366,17 +337,111 @@ class Controller extends React.Component {
         <br>
         “Oh, Stan,” the figure said, glowing even brighter. “Those went extinct centuries ago. Haven't you 
         ever heard of ChatGPT?”`
+      },
+      {
+        ////////// Index 13 //////////
+        pageType: 'challenge',
+        html: <HarmonicaPage loadPage={(i) => this.nextPage(i) } nextPageIndex={15} />,
+      },
+      {
+        ////////// Index 14 //////////
+        pageType: 'challenge',
+        html: <HarmonicaPage loadPage={(i) => this.nextPage(i) } nextPageIndex={16} />,
+      },
+      {
+        /////////// Index 15 //////////
+        pageType: 'narrative',
+        title: 'Hello Darkness',
+        story: `Stars swam in Stan’s eyes as Main Character stalked out of the rubble of the shop with a guitar 
+        in one hand and a harmonica in the other. Before he knew it, the world was dark.`,
+        nextPageIndex: 1
+      },
+      {
+        /////////// Index 16 //////////
+        pageType: 'narrative',
+        title: 'Victory at Last!',
+        story: `The Main Character let out a shriek of defeat, gently placed the guitar and harmonica on the counter, and left the shop, 
+        hanging his head in shame. Stan was in shock. Was this what it felt like to be a Main Character? 
+        <br>
+        <br>
+        Suddenly, everything began to lag slightly, and Stan heard a strange singing from above. The door began to glow. 
+        `,
+        nextPageIndex: 12
+      }, 
+      {
+        /////////// Index 17 //////////
+        pageType: 'narrative',
+        title: 'Chaos',
+        story: `One day, Stan was lovingly polishing his vintage guitar collection with the softest cloth in his possession when he heard 
+          two gunshots outside. The door to the music shop slammed open, rattling the vintage guitars and silhouetting an imposing figure 
+          in the dusty sunlight.
+          <br>
+          <br>
+          “Howdy,” the Main Character growled, sliding a smoking gun back into a tattered leather holster. “Show me the best guitar you own.”
+          <br>
+          <br>
+          Stan the Man didn't trust Main Character. He had heard too many stories about Main Character's exploits and “heroics” across the 
+          nation, all of which seemed unnecessarily egoistic and self-serving. But a customer was a customer, and Stan felt that he couldn't 
+          say no.
+          <br>
+          <br>
+          “Here you go,” Stan said, carefully removing a 1960s stratocaster guitar from its spot on the wall and handing it to Main 
+          Character, who grabbed it roughly. <a class='link'>“Do you know how to play?”</a>
+          <br>
+          <br>
+          Main Character strummed a truly awful chord. “I'll figure it out. Thanks,” he said, and he turned as if about to leave.
+          <br>
+          <br>
+          “Wait!” Stan the Man said. “I won't sell that guitar if you can't play it properly. And you would have to pay even if 
+          I did sell it to you.”
+          <br>
+          <br>
+          Main Character spun on his heel, unholstering his gun and taking deadly aim. A series of gunshots rang out as vintage 
+          guitar after vintage guitar exploded, showering the store in <a class='link'>priceless fragments</a>. <a class='link'>
+          Within a few moments, every large instrument was destroyed.</a>`,
+          links: [
+            {
+              linkIndex: 4
+            },
+            {
+              linkIndex: 5
+            },
+            {
+              linkIndex: 6
+            }
+          ],
       }
     ];
 
     this.state = {
       activeIndex: 0,
+      visited_8: false,
+      visited_9: false,
+      visited_10: false,
+      visited_11: false,
+      visited_15: false
     };
 
   }
 
   nextPage(i) {
-    this.setState({ activeIndex: i});
+    if (i === 8) {
+      this.setState({visited_8: true});
+    } else if (i === 9) {
+      this.setState({visited_9: true});
+    } else if (i === 10) {
+      this.setState({visited_10: true});
+    } else if (i === 11) {
+      this.setState({visited_11: true});
+    } else if (i === 15) {
+      this.setState({visited_15: true});
+    }
+
+    if (this.state.visited_8 && this.state.visited_9 && this.state.visited_10 && this.state.visited_11 && this.state.visited_15 && i === 3) {
+      this.setState({ activeIndex: 17})
+    } else {
+      this.setState({ activeIndex: i});
+    }
   }
 
   loadPage(i) {
@@ -386,13 +451,8 @@ class Controller extends React.Component {
     } else if (pageType === 'challenge') {
       return this.loadChallengePage(i);
     } 
-    // else if (pageType === 'title') {
-    //   return (
-    //     <Title loadPage={(i) => this.nextPage(i) } nextPageIndex={(this.state.activeIndex + 1)}/>
-    //   );
-    // }
   }
-
+ 
   loadNarrativePage(i) {
     const title = this.pageData[i].title;
     const story = this.pageData[i].story;
