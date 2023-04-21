@@ -3,10 +3,22 @@ import Button from '@mui/material/Button';
 import Harmonica from './harmonica'
 
 class HarmonicaPage extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+          showButton: false,
+        };
+      }
 
+    componentDidMount() {
+        setTimeout(function() {
+            this.setState({showButton: true});
+        }.bind(this), 4000);
+    }
+    
     render() {
         let button;
-        if (this.props.nextPageIndex) {
+        if (this.props.nextPageIndex && this.state.showButton) {
             button = <Button id='next-page-button' variant="contained" onClick={() => this.props.loadPage(this.props.nextPageIndex) }>Next Page</Button>
         }
 
