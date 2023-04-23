@@ -16,6 +16,7 @@ class NarrativePage extends React.Component {
 
     render() {
         let button;
+        let darkness = new Audio('./assets/hello_darkness.mp3');
         if (this.props.nextPageIndex) {
             button = <Button id='next-page-button' variant="contained" onClick={() => this.props.loadPage(this.props.nextPageIndex) }>Next Page</Button>
         }
@@ -23,6 +24,23 @@ class NarrativePage extends React.Component {
         let title;
         if (this.props.title) {
             title = <h1>{ this.props.title }</h1>
+        }
+
+        if (this.props.title === 'Hello Darkness' || this.props.title === 'The End') {
+            // console.log()
+            //play hello darkness
+            darkness.play();
+            darkness.addEventListener('ended', () => {
+                darkness.currentTime = 0;
+                darkness.play();
+            });
+
+            if (this.props.title !== 'The End') {
+                button = <Button id='next-page-button' variant="contained" onClick={() => {
+                    darkness.pause();
+                    this.props.loadPage(this.props.nextPageIndex);
+                } }>Next Page</Button>
+            }
         }
 
         return (
