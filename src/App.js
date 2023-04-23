@@ -17,6 +17,7 @@ function App() {
         >
           Learn React
         </a>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Spectral"></link>
       </header>
     </div>
   );
